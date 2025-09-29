@@ -6,16 +6,16 @@ mlflow ui --backend-store-uri sqlite:///mlflow.db
 
 
 ## Large file, exceeding limit 
+
 echo "Anaconda3-2022.05-Linux-x86_64.sh" >> .gitignore
+git add .gitignore
+git commit -m "Add .gitignore to exclude large file"
 
-## check if it is in the history
-git log --all --pretty=format:%H --follow -- Anaconda3-2022.05-Linux-x86_64.sh
+## Add all files except the large one
+git add .
+git commit -m "Initial commit without large file"
 
-## remove from history
-sudo apt-get update
-sudo apt-get install git-filter-repo
-## filter it out from the history 
-git filter-repo --path Anaconda3-2022.05-Linux-x86_64.sh --invert-paths
-git push --force origin main
+git remote -v
+git remote add origin https://github.com/RandaAdel/MLOps.git
 
 
