@@ -1,0 +1,1 @@
+This is a triaL for the mlops course 

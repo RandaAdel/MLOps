@@ -1,0 +1,21 @@
+## To check the working processes: 
+lsof -i :5000
+kill -9 12345
+
+mlflow ui --backend-store-uri sqlite:///mlflow.db
+
+
+## Large file, exceeding limit 
+echo "Anaconda3-2022.05-Linux-x86_64.sh" >> .gitignore
+
+## check if it is in the history
+git log --all --pretty=format:%H --follow -- Anaconda3-2022.05-Linux-x86_64.sh
+
+## remove from history
+sudo apt-get update
+sudo apt-get install git-filter-repo
+## filter it out from the history 
+git filter-repo --path Anaconda3-2022.05-Linux-x86_64.sh --invert-paths
+git push --force origin main
+
+
