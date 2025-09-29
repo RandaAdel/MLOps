@@ -1,9 +1,12 @@
+## create new env 
+
+
+
 ## To check the working processes: 
 lsof -i :5000
 kill -9 12345
 
 mlflow ui --backend-store-uri sqlite:///mlflow.db
-
 
 ## Large file, exceeding limit 
 
